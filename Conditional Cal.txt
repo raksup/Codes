@@ -1,0 +1,261 @@
+#include<iostream>
+#include<conio.h>
+int fact(int);
+using namespace std;
+class function
+{
+	public:
+		void body()
+		{
+		cout<<"Welcome to Conditional Calculator" << endl;
+	}
+	 float addition(int x, int y){
+        int ans = x + y;
+        return ans; 
+    }      
+    float subtraction(float x, float y)
+	{
+        float ans = x - y;
+        return ans;
+    }       
+    float multiplication(int x, int y){
+        int ans = x * y;
+        return ans;
+    }
+    float division(float x, float y){
+        int ans = x / y;
+        return ans;
+    }
+	float square(float x){
+        float ans = x * x;
+        return ans;   
+	}
+    int factorial(int x){
+    	unsigned int an=1;
+    	for (int a=1;a<=x;a++)
+		an = an*a;
+    	return an;
+	}
+    int permutation(int p1, int p2){
+    	int p;
+        p = p1/p2;
+        return p;
+    }
+    int combination(int c1, int c2, int c3){
+        int u;
+		u = c1/(c2*c3);
+        return u;
+    }
+    float arraysum(int x[2], int y[2]){
+        int ans = ;
+        return ans;
+    }
+    float arraymul(int x, int y){
+        int ans = x / y;
+        return ans; 
+    } */
+};
+
+int main()
+	{
+	float ans,sum,rem;
+	int opr,x,y,z;
+	int i,a,p1,p2,c1,c2,c3,row1,row2,column1,column2;
+	function key;
+	key.body();
+	
+	cout << "1 - Addition" << endl;
+	cout << "2 - Subtraction" << endl;
+	cout << "3 - Multiplication" << endl;
+	cout << "4 - Division" << endl;
+	cout << "5 - Square" << endl;
+	cout << "6 - Factorial" << endl;
+	cout << "7 - Permutation" << endl;
+	cout << "8 - Combination" << endl;
+	cout << "9 - Addition of 2D Array" << endl;
+	cout << "10 - Multiplication of 2D Array" << endl;
+	cout <<"What action do you want to perform? : "<< endl;
+	cin >> opr;
+
+	switch (opr){
+		case 1:
+			sum=0;
+			cout<<"ADDITION"<< endl;
+			cout<<"How many numbers do you want to add?"<< endl;
+			cin>>i;
+			for (a=0;a<i;a++){
+				cout<<"Enter Number";
+				cin>>x;
+				sum=sum+x;
+				}
+				cout<<"Sum is ="<<sum;
+			break;
+		case 2:
+			cout << "SUBTRACTION" << endl;  
+        	cout << "Enter first number: " << endl;
+        	cin >> x;
+        	cout << "Enter second number: " << endl;
+        	cin >> y;
+        	cout << x << " - " << y << " = ";
+        	cout << key.subtraction(x, y);
+        	break;              
+
+        case 3:
+        	cout << "MULTIPLICATION" << endl;  
+        	cout << "Enter first number: " << endl;
+        	cin >> x;
+        	cout << "Enter second number: " << endl;
+        	cin >> y;
+        	cout << x << " - " << y << " = ";
+        	// cout << key.multiplication(x, y);
+        	break;
+        case 4:
+        	cout << "DIVISION" << endl;  
+        	cout << "Enter first number: " << endl;
+        	cin >> x;
+        	cout << "Enter second number: " << endl;
+        	cin >> y;
+        	rem = x % y;
+        	cout << x << " / " << y << " = "<< endl;
+        	cout <<"quotient is"<< key.division(x, y) << endl;
+        	cout<<"remainder is"<<rem;
+        	break;
+        case 5:
+        	cout << "Square" << endl;  
+        	cout << "Enter the number: " << endl;
+        	cin >> x;
+        	cout << x << " ^2 " << " = ";
+        	cout << key.square(x);
+        	break;
+        case 6:
+        	cout << "FACTORIAL" << endl;  
+        	cout << "Enter a positive number: " << endl;
+        	cin >> x;
+        	cout << x << " ! " << " = " << key.factorial(x);
+        	break;
+        case 7:
+        	cout << "PERMUTATION" << endl;  
+        	cout << "Enter n: " << endl;
+        	cin >> x;
+        	cout << "Enter r: " << endl;
+        	cin >> y;
+        	z=x-y;
+        	p1= key.factorial(x);
+			p2= key.factorial(z);
+        	cout << key.permutation(p1,p2);
+        	break;
+        case 8:
+        	cout << "COMBINATIONTION" << endl;  
+        	cout << "Enter n: " << endl;
+        	cin >> x;
+        	cout << "Enter r: " << endl;
+        	cin >> y;
+        	c1= key.factorial(x);
+			c2= key.factorial(x-y);
+			c3= key.factorial(y);
+        	cout << key.combination(c1,c2,c3);
+        	break;
+        case 9:
+        	cout << "2D array ADDITION" << endl;  
+        	int m, n, c, d, first[10][10], second[10][10], sum[10][10];
+    		cout << "Enter the number of rows and columns of matrix ";
+   			cin >> m >> n;
+   			cout << "Enter the elements of first matrix\n";
+		   	for ( c = 0 ; c < m ; c++ )
+      		for ( d = 0 ; d < n ; d++ )
+         	cin >> first[c][d];
+			cout << "Enter the elements of second matrix\n";
+ 		   	for ( c = 0 ; c < m ;c++ )
+      		for ( d = 0 ; d < n ; d++ )
+            cin >> second[c][d];
+ 		   	for ( c = 0 ; c < m ; c++ )
+      		for ( d = 0 ; d < n ; d++ )
+         	sum[c][d] = first[c][d] + second[c][d];
+ 			cout << "Sum of entered matrices:-\n";
+ 			for ( c = 0 ; c < m ; c++ )
+      		for ( d = 0 ; d < n ; d++ ){
+			  
+         	cout << sum[c][d] << "\t";
+         	if(d==n-1)
+         	   cout << endl;
+         	}
+        	break;
+        case 10:
+        	cout << "2D array MULTIPLICATION" << endl;  
+        	int a[10][10], b[10][10], multi[10][10];
+    		row1=0, column1=0, row2=0, column2=0;
+   
+    		cout << "Enter rows for the first matrix: ";
+    		cin >> row1;
+   
+    		cout << "Enter columns for the first matrix: ";
+    		cin >> column1;
+     
+   			cout << "Enter rows for second matrix: ";
+    		cin >> row2;
+   
+    		cout << "Enter columns for second matrix: ";
+    		cin >> column2;
+				// If columns of first matrix in not equal to rows of second matrix then error will occur, asking user to re-enter size of matrix.
+  		    while (column1!=row2)
+    		{
+    		cout << "Error Occured! column of first matrix not equal to row of second.";
+    		cout << "How many rows in the first matrix: ";
+    		cin >> row1;
+   
+    		cout << "How many columns in the first matrix: ";
+    		cin >> column1;
+   
+       		cout << "How many rows in second matrix: ";
+		    cin >> row2;
+   
+    		cout << "How many columns in second matrix: ";
+    		cin >> column2;
+   
+    		}
+
+		    cout<< "Enter elements of 1st matrix: " << endl;
+    			for(int i=0; i<row1; i++)
+    			for(int j=0; j<column1; j++)
+    			{
+        		cout << "Enter element a" << i+1 << j+1 << " : ";
+        		cin >> a[i][j];
+    			}
+
+		    cout <<"Enter elements of 2nd matrix: " << endl;
+    			for(int i=0; i<row2; ++i)
+    			for(int j=0; j<column2; ++j)
+    		{
+	        cout << "Enter element b" << i+1 << j+1 << " : ";
+    		    cin >> b[i][j];
+		    }
+
+		    for(int i=0; i<row1; ++i)
+    		for(int j=0; j<column2; ++j)
+    		{
+       		multi[i][j]=0;
+    		}
+
+		    for(int i=0; i<row1; i++)
+    		for(int j=0; j<column2; j++)
+    		for(int k=0; k<column1; k++)
+    		{
+		        multi[i][j]=multi[i][j] + a[i][k] * b[k][j];
+    		}
+
+		    cout <<"Output Matrix: " << endl;
+    		for(int i=0; i<row1; i++)
+    		for(int j=0; j<column2; j++)
+    		{
+        	cout << " " << multi[i][j];
+        	if(j==column2-1)
+            cout << endl;
+    		}
+        	
+	
+        
+		default:
+        cout << "Invalid Input";
+		break;        
+}
+}    // return(0);
